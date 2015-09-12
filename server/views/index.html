@@ -1,22 +1,73 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="page-head-line">Gender Gap in Software Engineering</h2>
+            </div>
+          </div>
 
-{% block title %}{% endblock %}
 
+<!-- DASHBOARD STATISTICS -->
+<!--           <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="dashboard-div-wrapper bk-clr-four">
+                <h5>Average Percent Female Per Company</h5>
+                <h1>7%</h1>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="dashboard-div-wrapper bk-clr-four">
+                <h5>Average Female Engineers Per Company</h5>
+                <h1> 2 </h1>
+              </div>
+          </div>
+        </div> -->
+<!-- END DASHBOARD STATISTICS -->
 
-{% block content %}
+    <div class="container">
+       <table class="table table-bordered table-hover">
+         <tr>
+           <th>Company</th>
+           <th>Female Engineers</th>
+           <th>Total Engineers</th>
+           <th>Percent Female</th>
+         </tr>
+         <tbody id="tableBody" ng-controller="companyController">
+          <tr ng-repeat="company in companies">
+            <td>{{ company.company }}</td>
+<!--             <td>{{ stat.femaleeng }}</td>
+            <td>{{ stat.numeng }}</td>
+            <td>{{ stat.percentfemale }}</td> -->
+          </tr>
+         </tbody>
+       </table>
+    </div>
 
-  <div class="container">
-     <table class="table table-bordered table-hover">
-       <tr>
-         <th>Company</th>
-         <th>Female Engineers</th>
-         <th>Total Engineers</th>
-         <th>Percent Female</th>
-       </tr>
-       <tbody id="tableBody">
-       </tbody>
-     </table>
-
-  </div>
-
-{% endblock %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+                  All statistics courtesy of <a href="https://github.com/triketora/women-in-software-eng">Tracy Chou</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <a target="_blank" href="http://www.twitter.com/zoeadelman"><img alt="follow me on twitter" src="//login.create.net/images/icons/user/twitter_30x30.png" border=0></a>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>
