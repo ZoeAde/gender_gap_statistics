@@ -8,7 +8,6 @@ function createStatisticArray(object) {
     var stat = new Statistic(company, female_eng, num_eng, percent_female);
     companyArray.push(stat);
   }
-  // console.log(array);
   return companyArray;
 }
 
@@ -19,23 +18,18 @@ function Statistic(company, female_eng, num_eng, percent_female) {
   this.percent_female = percent_female;
 }
 
-
-
 ////////// ANGULAR VERSION////////
 var app = angular.module("myApp", []);
 app.controller('companyController', function($scope, $http) {
 
+    $http.get('https://spreadsheets.google.com/feeds/list/0AlZH8QBl60oodEJTdFA5TlZOcDJCMU02RkZoSHF5SHc/od6/public/values?alt=json').success(function(response) {
 
-
-    $http.get('https://spreadsheets.google.com/feeds/list/0AlZH8QBl60oodEJTdFA5TlZOcDJCMU02RkZoSHF5SHc/od6/public/values?alt=json').then(function(response) {
-      var object = response.data.feed.entry;
-      // console.log(object[1]);
-      var newObject = createStatisticArray(object);
-
-       $scope.statistics = newObject;
-       console.log($scope.statistics);
-
-      // $scope.indexArray = result;
+      var object = response.feed.entry;
+      console.log(parsedObject);
+      var parsedObject = createStatisticArray(object);
+      console.log(parsedObject);
+      console.log(parsedObject[100].company);
+      $scope.statistics = parsedObject;
     });
 });
 

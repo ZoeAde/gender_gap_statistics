@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
@@ -33,7 +32,7 @@
         </div> -->
 <!-- END DASHBOARD STATISTICS -->
 
-    <div class="container">
+<!--     <div class="container">
        <table class="table table-bordered table-hover">
          <tr>
            <th>Company</th>
@@ -42,15 +41,18 @@
            <th>Percent Female</th>
          </tr>
          <tbody id="tableBody" ng-controller="companyController">
-          <tr ng-repeat="company in companies">
-            <td>{{ company.company }}</td>
+          <tr ng-repeat="stat in statistics">
+            <td>{{ stat.name }}</td> -->
 <!--             <td>{{ stat.femaleeng }}</td>
             <td>{{ stat.numeng }}</td>
             <td>{{ stat.percentfemale }}</td> -->
-          </tr>
+  <!--         </tr>
          </tbody>
        </table>
-    </div>
+    </div> -->
+    <ul ng-controller="companyController">
+      <li ng-repeat="name in companies"></li>
+    </ul>
 
     <footer>
       <div class="container">
