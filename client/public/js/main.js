@@ -25,10 +25,7 @@ app.controller('companyController', function($scope, $http) {
     $http.get('https://spreadsheets.google.com/feeds/list/0AlZH8QBl60oodEJTdFA5TlZOcDJCMU02RkZoSHF5SHc/od6/public/values?alt=json').success(function(response) {
 
       var object = response.feed.entry;
-      console.log(parsedObject);
       var parsedObject = createStatisticArray(object);
-      console.log(parsedObject);
-      console.log(parsedObject[100].company);
       $scope.statistics = parsedObject;
     });
 });
