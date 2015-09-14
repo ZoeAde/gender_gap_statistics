@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  </head>
+  <body ng-controller="mainController">
+
+<!--   HEADER -->
+    <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="page-head-line">Defining The Gender Gap</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 buttons">
+              <button type="button" class="btn btn-circle btn-xl" ng-click="go('/comment')"><i class="glyphicon glyphicon-comment"></i></button>
+              <button type="button" class="btn btn-circle btn-xl" ng-click="go('/table')"><i class="glyphicon glyphicon-list"></i></button>
+              <button type="button" class="btn btn-circle btn-xl" ng-click="go('/compare')"><i class="glyphicon glyphicon-transfer"></i></button>
+              <button type="button" class="btn btn-circle btn-xl" ng-click="go('/bar')"><i class="glyphicon glyphicon-tasks"></i></button>
+              <button type="button" class="btn btn-circle btn-xl" ng-click="go('/people')"><i class="glyphicon glyphicon-user"></i></button>
+            </div>
+          </div>
+<!-- END HEADER -->
+
+
+<!-- TEST -->
+
+    <div class="container">
+       <table class="table table-bordered table-hover">
+         <tr>
+           <th>Company</th>
+           <th>Female Engineers</th>
+           <th>Total Engineers</th>
+           <th>Percent Female</th>
+         </tr>
+         {% raw %}
+         <tbody id="tableBody" ng-controller="companyController">
+          <tr ng-repeat="stat in statistics">
+            <td>{{ stat.company }}</td>
+            <td>{{ stat.female_eng }}</td>
+            <td>{{ stat.num_eng }}</td>
+            <td>{{ stat.percent_female }}</td>
+          </tr>
+         </tbody>
+       </table>
+        {% endraw %}
+    </div>
+
+<!-- END TEST -->
+
+
+
+<!-- INSERT VIEWS -->
+    <div ng-view id="main">
+      {{ message }}
+    </div>
+<!-- END INSERT VIEWS -->
+
+  </div>
+</div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
