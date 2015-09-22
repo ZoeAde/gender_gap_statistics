@@ -3,7 +3,7 @@
  <div class="row">
   <div class="col-xs-offset-1 col-xs-10 center">
     <div class="statRightHolder">
-      <h3 class="blue">Wells Fargo</h3>
+      <h3 class="blue">{{ stats.company }}</h3>
     </div>
    </div>
  </div>
@@ -12,7 +12,7 @@
     <div class="col-xs-offset-1 col-xs-10 center">
       <div>
         <div>
-          <div class="progress-pie-chart" data-percent="50">
+          <div class="progress-pie-chart" data-percent="10">
             <div class="ppc-progress">
               <div class="ppc-progress-fill"></div>
             </div>
@@ -30,17 +30,18 @@
 <br>
 <br>
 
-  <div class="row">
+<!--   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 center">
       <div class="statRightHolder leftAlign">
         <ul class="statsLeft">
-          <li><h3 class="yellow">3</h3> <span>Female Engineers</span></li>
-          <li><h3 class="yellow">8%</h3> <span>Female</span></li>
+          <li><h3 class="yellow">12{{ stat.female_eng }}</h3> <span>Female Engineers</span></li>
+          <li><h3 class="yellow">{{ stat.percent_female }}%</h3> <span>Female</span></li>
         </ul>
         <ul class="statsRight">
-          <li><h3>37</h3> <span>Male Engineers</span></li>
-          <li><h3>82%</h3> <span>Male</span></li>
+          <li><h3>{{ stat.num_eng }}</h3> <span>Male Engineers</span></li>
+          <li><h3>{{ stat.percent_female }}%</h3> <span>Male</span></li>
         </ul>
       </div>
   </div>
+</div> -->
 <!-- END INDIVIDUAL COMPANY STATS PAGE -->

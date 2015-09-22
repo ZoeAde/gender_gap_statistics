@@ -62,11 +62,24 @@ h1 {
   color: #545557;
 }
 
-h6, .buttons {
+h6 {
   margin-left: -7%;
 }
 /*END TITLE PAGE*/
 
+/*TABLE PAGE*/
+thead a {
+  color: #F0677C;
+}
+
+thead a:hover {
+  color: #E3C8DC;
+}
+
+td {
+  color: black;
+}
+/*END TABLE PAGE*/
 
 /*TITLE HEADER*/
 .page-head-line {
@@ -75,8 +88,9 @@ h6, .buttons {
     border-bottom: 2px solid #F0677C;
     text-transform: uppercase;
     color: #F0677C;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 40px;
+    letter-spacing: 0.23em;
 }
 
 /*BUTTONS*/
@@ -86,6 +100,7 @@ h6, .buttons {
 
 i {
     color: #F0677C;
+
 }
 
 .btn-circle.btn-xl {
@@ -102,8 +117,20 @@ i {
     border-style: solid;
     border-width: 3px;
     background-color: white;
+    outline: none;
 }
 
+*:focus {
+    outline: 0 !important;
+}
+
+.btn-circle.btn-xl:hover, .input-group-addon:hover {
+  background-color: #E3C8DC;
+}
+
+td:hover {
+  color: #E3C8DC;
+}
 
 /*INDIVIDUAL COMPANY FORMATTING*/
 
@@ -194,7 +221,7 @@ margin-bottom: 25px;
   width:200px;
   height: 200px;
   border-radius: 50%;
-  background-color: #E5E5E5;
+  background-color: #B0CFFF;
   position: relative;
 }
 .progress-pie-chart.gt-50 {
@@ -220,7 +247,7 @@ margin-bottom: 25px;
   width: 200px;
   height: 200px;
   clip: rect(0, 100px, 200px, 0);
-  background: #81CE97;
+  background: #E8B2BB;
   transform: rotate(60deg);
 }
 .gt-50 .ppc-progress {
@@ -247,7 +274,7 @@ margin-bottom: 25px;
   display: block;
   font-size: 2.6em;
   font-weight: bold;
-  color: #81CE97;
+  color: #E8B2BB;
 }
 
 .pcc-percents-wrapper {
@@ -315,3 +342,11 @@ margin-bottom: 25px;
 }
 
 /*END BAR GRAPH*/
+
+
+/* VERTICAL GRAPH */
+
+/*END VERTICAL GRAPH*/
+
+
+

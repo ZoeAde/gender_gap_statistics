@@ -1,0 +1,36 @@
+<!-- COMPANIES BAR GRAPH -->
+  <div class="row">
+    <div class="col-xs-12">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchStats">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12"
+      <div class="row donut">
+          <div class="donutContainer">
+            <section class="graph-two">
+              <div class="bar-graph-container">
+                <div ng-repeat="stat in statistics | orderBy:sortType:sortReverse | filter:searchStats">
+                  <div class="bar-container">
+                   <div class="companyBar" style="width:{{ stat.percent_female}}%;">
+                     <p>{{ stat.company }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<!-- END COMPANIES BAR GRAPH -->
