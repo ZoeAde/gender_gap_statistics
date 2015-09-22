@@ -33,7 +33,7 @@
               </tr>
             </thead>
             <tbody id="tableBody" >
-              <tr ng-click="go('/company-stats/:{{idName}}')" ng-repeat="stat in statistics | orderBy:sortType:sortReverse | filter:searchStats">
+              <tr ng-repeat="stat in statistics | orderBy:sortType:sortReverse | filter:searchStats">
                   <td>{{ $index + 1 }}</td>
                   <td>{{ stat.company }}</td>
                   <td>{{ stat.female_eng }}</td>
